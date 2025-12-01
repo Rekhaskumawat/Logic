@@ -20,7 +20,7 @@ using namespace std ;
 void Display()
 {
     static int iCnt = 5;
-    while (iCnt >= 1)
+    if(iCnt >= 1)
     {
         printf("%d\t", iCnt);
         iCnt-- ;
@@ -47,4 +47,5 @@ int main()
 //   Output:5  4  3  2  1
 //   
 //
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
