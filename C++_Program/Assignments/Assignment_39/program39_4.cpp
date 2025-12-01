@@ -20,7 +20,7 @@ using namespace std ;
 void Display()
 {
     static char ch = 'A';
-    while (ch <= 'F')
+    if(ch <= 'F')
     {
         printf("%c\t", ch);
         ch++ ;
@@ -47,4 +47,5 @@ int main()
 //   Output:A  B  C  D  E  F
 //   
 //
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
