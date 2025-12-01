@@ -21,7 +21,7 @@ using namespace std ;
 void Display(int iNo)
 {
     static int i = 0 ;
-    while (i < iNo)
+    if(i < iNo)
     {
         printf("*\t");
         i++ ;
@@ -52,4 +52,5 @@ int main()
 //
 //   Input : 5                    Output:*  *  *  *  *
 //
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
