@@ -22,7 +22,7 @@ void Display(int iNo)
 {
     static int iCnt = 0 ;
     static char ch = 'a';
-    while (iCnt < iNo)
+    if(iCnt < iNo)
     {
         printf("%c\t", ch);
         ch++ ;
@@ -55,4 +55,5 @@ int main()
 //  Input:6                                    Output:a  b  c  d  e  f
 //   
 //
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
