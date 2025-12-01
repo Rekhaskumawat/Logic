@@ -51,7 +51,6 @@ void StrRevX(char ch[] )
 int main()
 {
     char cArr[50] ={'\0'};
-    char cValue = '\0';
     
     printf("Enter String:");
     scanf("%[^'\n']s", cArr);
@@ -70,4 +69,5 @@ int main()
 //  Input1::Marvellous                Output:Reverse String: suollevraM
 //  Input1 :Hello World               Output:Last Reverse String: dlroW olleH
 //
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
