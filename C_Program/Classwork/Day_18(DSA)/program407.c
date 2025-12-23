@@ -72,6 +72,11 @@ void DeleteAtPos(PPNODE first , PPNODE last , int pos)
 
 void Display(PNODE first , PNODE last)
 {
+    if(first == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
     do
     {
         printf("| %d | -> ", first->data);
@@ -99,4 +104,5 @@ int main()
     InsertLast(&head , &tail , 121);
 
     return 0 ;
+
 }
