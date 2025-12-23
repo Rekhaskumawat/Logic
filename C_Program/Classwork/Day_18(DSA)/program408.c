@@ -72,6 +72,11 @@ void DeleteAtPos(PPNODE first , PPNODE last , int pos)
 
 void Display(PNODE first , PNODE last)
 {
+    if(first == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
     do
     {
         printf("| %d | -> ", first->data);
@@ -84,7 +89,11 @@ void Display(PNODE first , PNODE last)
 int Count(PNODE first , PNODE last)
 {
     int iCount = 0 ;
-    
+    if(first == NULL)
+    {
+        printf("List is empty\n");
+        return 0 ;
+    }
     do
     {
         iCount++ ;
@@ -117,4 +126,5 @@ int main()
     printf("Number of nodes : %d\n", iRet);
     
     return 0 ;
+
 }
