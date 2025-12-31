@@ -1,0 +1,128 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Required header files
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+#include<stdlib.h>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Structure for a node of singly linked list
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+struct node
+{
+    int data ; 
+    struct node*next;
+};
+
+typedef struct node NODE;
+typedef struct node* PNODE ;
+typedef struct node** PPNODE;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Description : implementation of Singly Linear Linked List
+// Function     : InsertFirst
+// Description  : Insert node at beginning
+//  Author      : Rekha Kumawat
+//  Date        : 31/12/2025
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+void InsertFirst(PPNODE first , int iNo)
+{
+    PNODE newn = NULL;
+
+    newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data= iNo ;
+    newn->next =  NULL;
+
+    if((*first) == NULL)
+    {
+        (*first) = newn;
+    }
+    else
+    {
+        newn->next = (*first);
+        (*first) = newn;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Display
+//  Description :   display the Linked list 
+//  Input :         Address
+//
+///////////////////////////////////////////////////////////////////////////////
+
+void Display(PNODE first)
+{
+    printf("Input linked list :");
+
+    while(first != NULL)
+    {
+        printf(" |%d| ->",first->data);
+        first = first->next ;
+    }
+    printf("NULL\n");
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : ReplaceEven
+//  Discription   : replace even number with 0
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+void ReplaceEven(PNODE first )
+{
+    int iCount = 0 ;
+    printf("Updated Linked List :- ");
+    while ((first != NULL))
+    {
+        if(( first->data % 2)  == 0)
+        {
+            first->data = 0;
+        }
+        printf("| %d |->", first->data);
+        first = first->next ;
+    }
+    printf("NULL\n");
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Entry Point Function
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    PNODE head = NULL ;
+
+    InsertFirst(&head , 51);
+    InsertFirst(&head , 22);
+    InsertFirst(&head , 111);
+    InsertFirst(&head ,100);
+    InsertFirst(&head ,111);
+    InsertFirst(&head ,121);
+    InsertFirst(&head ,152);
+    Display(head);
+    ReplaceEven(head);
+
+    return 0 ;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Input linked list : |152| -> |121| -> |111| -> |100| -> |111| -> |22| -> |51| ->NULL
+//    Updated Linked List :- | 0 |->| 121 |->| 111 |->| 0 |->| 111 |->| 0 |->| 51 |->NULL
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
