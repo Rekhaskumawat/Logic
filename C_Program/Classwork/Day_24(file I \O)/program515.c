@@ -1,0 +1,32 @@
+
+// system call read() to read data from existing file  (offset remains maintained by kernel)
+
+#include<stdio.h>
+#include<stdlib.h> 
+#include<unistd.h>
+#include<fcntl.h> 
+
+
+int main()
+{
+    int fd = 0;
+    int iRet = 0;
+    char buffer[100] = {'\0'};
+    char Arr[10] = {'\0'};
+
+    fd = open("JanuaryX.txt" , O_RDONLY);
+
+    printf("File gets opened with FD : %d\n", fd);
+
+    iRet = read(fd , buffer , 11);
+    printf("Data from file is :%s\n", buffer);
+    printf("Return value of read is : %d\n", iRet);
+
+    iRet = read(fd , Arr , 10);
+    printf("Data from file is :%s\n", Arr);
+    printf("Return value of read is : %d\n", iRet);
+
+    close(fd);
+
+    return 0 ;
+}
