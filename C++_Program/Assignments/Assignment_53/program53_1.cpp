@@ -1,0 +1,83 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//required header file
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name  : CopyArray
+//  Description    : Copy the from souce to destination
+//  Input          : Array , Size of Array
+//  Output         : Nothing
+//  Author         : Rekha Shankarlal Kumawat
+//  Date           : 15/01/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+void CopyArray(T*Src , T*Dest , int iSize)
+{
+    int iCnt = 0;
+    for(iCnt = 0; iCnt < iSize  ;iCnt++)
+    {
+        Dest[iCnt] = Src[iCnt];
+    }
+    cout<<"Source Array:- \n";
+    for(iCnt = 0; iCnt < iSize  ;iCnt++)
+    {
+        cout<<Src[iCnt]<<" ";
+    }
+    cout<<"\n";
+    cout<<"Destination Array:- \n";
+    for(iCnt = 0; iCnt < iSize  ;iCnt++)
+    {
+        cout<<Dest[iCnt]<<" ";
+    }
+    cout<<"\n";
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Entry point function
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iLength = 0 ;
+    int iCnt = 0;
+
+    cout<<"Enter the lenght of the array:-\n";
+    cin>>iLength;
+
+    int*Brr = NULL ;
+    Brr = new int[iLength];
+
+    int*Arr = NULL ;
+    Arr = new int[iLength];
+
+    cout<<"Enter the Elements:-\n";
+
+    for(iCnt = 0 ; iCnt < iLength ; iCnt++)
+    {
+        cin>>Brr[iCnt];
+    }
+
+    CopyArray(Brr , Arr , iLength);
+
+    delete Brr;
+    delete Arr;
+
+    return 0 ;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//      Input1: 11 12 13 14 15            Output: 1 12 13 14 15 
+//      Input1: 10 20 30 40 50            Output: 10 20 30 40 50
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

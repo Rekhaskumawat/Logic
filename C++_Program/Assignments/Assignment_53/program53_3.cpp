@@ -1,0 +1,90 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//required header file
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name  : SecondMax
+//  Description    : Return Second Maximum number
+//  Input          : Array , Size of Array
+//  Output         : Second Maximum number
+//  Author         : Rekha Shankarlal Kumawat
+//  Date           : 15/01/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+T SecondMax(T*Arr, int iSize)
+{
+
+    if(iSize < 2)
+    {
+        return -1;   
+    }
+
+    T Max = Arr[0];
+    T SecMax = Arr[0];
+
+    for(int iCnt = 1; iCnt < iSize; iCnt++)
+    {
+        if(Arr[iCnt] > Max)
+        {
+            SecMax = Max;
+            Max = Arr[iCnt];
+        }
+        else if((Arr[iCnt] > SecMax) && (Arr[iCnt] != Max))
+        {
+            SecMax = Arr[iCnt];
+        }
+    }
+
+    return SecMax;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Entry point function
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iLength = 0 ;
+    int iCnt = 0;
+    int Ret = 0;
+
+    cout<<"Enter the lenght of the array:-\n";
+    cin>>iLength;
+
+    int*Brr = NULL ;
+    Brr = new int[iLength];
+
+    cout<<"Enter the Elements:-\n";
+
+    for(iCnt = 0 ; iCnt < iLength ; iCnt++)
+    {
+        cin>>Brr[iCnt];
+    }
+
+    Ret = SecondMax(Brr, iLength);
+
+    cout<<"Second maximum number :"<<Ret <<"\n";
+    
+
+    delete Brr;
+
+    return 0 ;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//      Input1: 11 12 11 32 12            Output: 12
+//      Input1: 10 20 30 40 50            Output: 40
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
