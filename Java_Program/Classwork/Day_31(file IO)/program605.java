@@ -1,0 +1,85 @@
+import java.io.*;
+import java.util.*;
+
+class program605
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+        String FolderName = null;
+        String Packname = null;
+        String Header = null;
+        
+        int iRet = 0;
+        int i = 0;
+        int  j = 0;
+        byte Buffer[] = new byte[1024];
+        byte Bheader[] = new byte[100];
+
+        System.out.println("Enter the name of directory");
+        FolderName = sobj.nextLine();
+
+        System.out.println("Enter the name of Packed file");
+        Packname = sobj.nextLine();
+
+        byte key = 0x11;
+
+
+        File fobj = new File(FolderName);
+
+        if((fobj.exists()) && (fobj.isDirectory()))
+        {
+            File Packobj = new File(Packname);
+
+            Packobj.createNewFile();
+
+            FileOutputStream foobj = new FileOutputStream(Packobj);
+
+            FileInputStream fiobj = null;
+
+            System.out.println("Directory is present");
+
+            File fArr[] = fobj.listFiles();
+
+
+            System.out.println("number of files in the folder are :" +fArr.length);
+
+            for(i =0 ; i < fArr.length ; i++)
+            {
+                fiobj = new FileInputStream(fArr[i]);
+
+                if(fArr[i].getName().endsWith(".txt"))
+                {
+                    // Header formation
+                    Header = fArr[i].getName() + " " + fArr[i].length();
+
+                    for(j = Header.length() ; j <100 ; j++)
+                    {
+                        Header = Header + " ";
+                    }
+                    Bheader = Header.getBytes();
+
+                    foobj.write(Bheader , 0 ,100);
+                    
+                    /*while ((iRet = fiobj.read(Buffer)) != -1) 
+                    {
+                        for(j = 0 ; j < iRet ; j++ )
+                        {
+                            Buffer[j] = (byte)( Buffer[j] ^ key) ;
+                        }
+                        foobj.write(Buffer , 0 ,iRet);
+                    }*/
+
+                }
+                fiobj.close();
+            }
+
+            System.out.println();
+        }
+        else
+        {
+            System.out.println("ther is no such Directory");
+        }
+    }
+}
+

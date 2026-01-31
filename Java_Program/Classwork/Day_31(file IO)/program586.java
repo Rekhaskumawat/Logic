@@ -1,0 +1,20 @@
+
+import java.io.*;
+import java.util.*;
+
+public class program586
+{
+    public static void main(String A[])
+    {
+        int No = 21 ;
+        int Ans = 0;
+        Ans = No ^ 11 ;
+
+        System.out.println("Encrypted Data : "+Ans);
+
+        Ans = Ans ^ 11 ;
+
+        System.out.println("Decrypted Data :"+Ans);
+    }
+    
+}
