@@ -12,7 +12,7 @@
 import java.util.*;
 import java.io.*;
 
-class program60_1
+class program60_2
 {
     public static void main(String A[])throws Exception
     {
@@ -66,4 +66,5 @@ class program60_1
         System.out.println("File which have maximum size :- " +FileName);
 
     }
+
 }
