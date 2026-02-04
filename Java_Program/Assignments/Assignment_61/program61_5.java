@@ -1,14 +1,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  Description : Accept two input file names and one ouput file name 
-//                and merge both files into output files
+//  Description : Accept file name from user and split that file into seprate files
+//                  (FirstHalf and SecondHalf)
 //
 //  Author      : Rekha Shankarlal Kumawat
 //
 //  Date        : 04 /02 /2026
 //
 ////////////////////////////////////////////////////////////////////////////////////////////
-/// 
+
 import java.util.*;
 import java.io.*;
 
@@ -83,4 +83,5 @@ class program61_5
     
         
     } 
+
 }
