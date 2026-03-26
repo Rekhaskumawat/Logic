@@ -1,6 +1,6 @@
 # Assignment 79 (Senario Based Question)
 
-### Question 1 (progt=ram79_1)
+### Question 1 (program79_1)
 
 ```
 Description : Design a Java application that analyzes student performance using a 2D matrix.
